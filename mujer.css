@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+:root { --ink: #171816; 
+    --paper: #f4f2ed; 
+    --olive: #69725d; 
+    --clay: #b8755e; 
+    --line: #d9d6ce; }
+body { background: var(--paper); color: var(--ink); }
+header {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-logo{
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.iconos{
+    color: white;
+    font-size: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+header {
+    transition: background-color .25s ease, box-shadow .25s ease;
+}
+
+header:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
+}
+
+header nav a,
+header .iconos a {
+    transition: color .25s ease, transform .25s ease;
+}
+
+header nav a {
+    position: relative;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 8px;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+header nav a:hover::after {
+    transform: scaleX(1);
+}
+
+header .iconos a {
+    display: inline-block;
+}
+
+header .iconos a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+.portada {
+    height: 700px;
+
+    background-image:
+        linear-gradient(to top, black, transparent 60%),
+        url("../mujer/img/mujer_portada.webp");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+.portada h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.portada p {
+    font-size: 18px;
+}
+
+.contenido-portada {
+    margin-top: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#mujer {
+    text-align: center;
+    padding: 65px 20px 55px;
+    background-color: #e9dfd5;
+}
+#mujer h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+#mujer p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+    color: #555;
+}
+#mujer img {
+    width: 500px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    margin: 25px auto 20px;
+}
+#mujer h3 {
+    font-size: 30px;
+}
+#productos {
+    padding: 65px 8%;
+    background-color: white;
+}
+#productos > h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.producto {
+    background-color: #f8f6f3;
+    margin: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    padding-bottom: 20px;
+    text-align: center;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.producto img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+.producto h3 {
+    font-size: 18px;
+    margin: 18px 10px 10px;
+}
+.producto p {
+    color: #555;
+    margin-bottom: 15px;
+}
+.producto button,
+#mensaje-final button {
+    border: none;
+    background-color: #111;
+    color: white;
+    padding: 12px 28px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.producto button:hover,
+#mensaje-final button:hover {
+    background-color: #80654e;
+}
+#mensaje-final {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #e9dfd5;
+}
+#mensaje-final h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+#mensaje-final p {
+    color: #555;
+    margin-bottom: 25px;
+    
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 30px;
+    padding: 55px 32px;
+    background: var(--ink);
+    color: white;
+}
+
+.marca-pie h2 {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.marca-pie p,
+.derechos-autor {
+    color: #a8aba3;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.enlaces-pie {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.enlaces-pie a {
+    padding: 0;
+    font-size: 14px;
+}
+
+.derechos-autor {
+    margin: 0;
+}
+@media (max-width: 900px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #mujer h2 {
+        font-size: 40px;
+    }
+}
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+    nav {
+        gap: 18px;
+    }
+    #mujer img {
+        width: 100%;
+        height: 250px;
+    }
+    .productos {
+        grid-template-columns: 1fr;
+    }
+    #mujer h2 {
+        font-size: 34px;
+    }
+    #mujer h3 {
+        font-size: 26px;
+    }
+}

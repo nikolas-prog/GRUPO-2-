@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root { --ink: #171816; 
+    --paper: #f4f2ed; 
+    --olive: #69725d; 
+    --clay: #b8755e; 
+    --line: #d9d6ce; }
+body { background: var(--paper); color: var(--ink); }
+header {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-logo{
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.iconos{
+    color: white;
+    font-size: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+header {
+    transition: background-color .25s ease, box-shadow .25s ease;
+}
+
+header:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
+}
+
+header nav a,
+header .iconos a {
+    transition: color .25s ease, transform .25s ease;
+}
+
+header nav a {
+    position: relative;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 8px;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+header nav a:hover::after {
+    transform: scaleX(1);
+}
+
+header .iconos a {
+    display: inline-block;
+}
+
+header .iconos a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+.portada {
+    height: 700px;
+
+    background-image:
+        linear-gradient(to top, black, transparent 60%),
+        url("imagenes_hombre/portada_hombre.webp");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+.portada h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.portada p {
+    font-size: 18px;
+}
+
+.contenido-portada {
+    margin-top: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.producto {
+    background-color: white;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.productos {
+    width: 90%;
+    max-width: 1400px;
+    margin: 50px auto;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12);
+}
+
+.titulo-productos {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.titulo-productos h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+.informacion {
+    padding: 20px;
+}
+
+.informacion h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.precio {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.boton-comprar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #111;
+    color: white;
+    font-size: 14px;
+}
+
+
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 30px;
+    padding: 55px 32px;
+    background: var(--ink);
+    color: white;
+}
+
+.marca-pie h2 {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.marca-pie p,
+.derechos-autor {
+    color: #a8aba3;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.enlaces-pie {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.enlaces-pie a {
+    padding: 0;
+    font-size: 14px;
+}
+
+.derechos-autor {
+    margin: 0;
+}
+
+#productos-hombre {
+    background-color: #f0efec;
+}

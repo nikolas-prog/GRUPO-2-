@@ -1,0 +1,520 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root { --ink: #171816; 
+    --paper: #f4f2ed; 
+    --olive: #69725d; 
+    --clay: #b8755e; 
+    --line: #d9d6ce; }
+body { background: var(--paper); color: var(--ink); }
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-logo{
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.iconos{
+    color: white;
+    font-size: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+header {
+    transition: background-color .25s ease, box-shadow .25s ease;
+}
+
+header:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
+}
+
+header nav a,
+header .iconos a {
+    transition: color .25s ease, transform .25s ease;
+}
+
+header nav a {
+    position: relative;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 8px;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+header nav a:hover::after {
+    transform: scaleX(1);
+}
+
+header .iconos a {
+    display: inline-block;
+}
+
+header .iconos a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.portada {
+    height: 700px;
+
+    background-image:
+        linear-gradient(to top, black, transparent 60%),
+        url("imaganes/hero.webp");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+.contenido-portada {
+    margin-top: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contenido-portada h2 {
+    font-size: 50px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.contenido-portada p {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contenido-portada a {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contenido-portada a:hover {
+    background-color: black;
+    color: white;
+}
+
+.categorias,
+.novedades {
+    max-width: 1240px;
+    margin: auto;
+    padding: 100px 32px;
+}
+
+.encabezado-seccion {
+    max-width: 520px;
+}
+
+.encabezado-seccion h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1;
+    margin: 12px 0 18px;
+}
+
+.encabezado-seccion > p:last-child {
+    color: #676861;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.etiqueta {
+    color: var(--clay);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.enlaces-categoria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 55px;
+}
+
+.enlace-categoria {
+    min-height: 270px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: white;
+    font-size: 27px;
+    font-weight: 500;
+    background-size: cover;
+    background-position: center;
+    transition: transform .25s ease;
+}
+
+.enlace-categoria:hover {
+    transform: translateY(-5px);
+}
+
+.enlace-categoria i {
+    font-size: 17px;
+}
+
+.enlace-categoria-mujer {
+    background: linear-gradient(0deg, rgba(0, 0, 0, .55), transparent), 
+    url("imaganes/mujer.png") 27% center / cover;
+}
+
+.enlace-categoria-hombre {
+    background: linear-gradient(0deg, rgba(0, 0, 0, .55), transparent), 
+    url("imaganes/hero.webp") 53% center / cover;
+}
+
+.enlace-categoria-accesorios {
+    background: linear-gradient(0deg, rgba(0, 0, 0, .55), transparent), 
+    url("imaganes/accesorios.png") 82% center / cover;
+}
+
+.novedades {
+    padding-top: 24px;
+}
+
+.encabezado-fila {
+    max-width: none;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.encabezado-fila h2 {
+    margin-bottom: 0;
+}
+
+.enlace-texto {
+    color: var(--ink);
+    padding: 0 0 7px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 15px;
+}
+
+.enlace-texto span {
+    margin-left: 10px;
+}
+
+.rejilla-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.tarjeta-producto {
+    color: var(--ink);
+    margin: 6px;
+    padding: 10px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12);
+}
+
+.imagen-producto {
+    aspect-ratio: 3 / 4;
+    position: relative;
+    background-image: url("imaganes/hero.webp");
+    background-size: 390%;
+    background-position: center;
+    transition: transform .35s ease;
+    overflow: hidden;
+}
+
+.imagen-producto:hover {
+    transform: scale(1.02);
+}
+
+.imagen-producto button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(244, 242, 237, .9);
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.etiqueta-producto {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    padding: 6px 9px;
+    background: var(--clay);
+    color: white;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.imagen-producto-uno {
+    background-image: url("imaganes/jerseynegro.webp");
+    background-position: center;
+    background-size: cover;
+}
+
+.imagen-producto-uno:hover,
+.imagen-producto-dos:hover {
+    transform: scale(1.02);
+}
+
+.imagen-producto-dos {
+    background-image: url("imaganes/pantalonopiedra.webp");
+    background-position: center;
+    background-size: cover;
+}
+
+.imagen-producto-tres {
+    background-image: url("imaganes/chaquetaolivda.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.imagen-producto-cuatro {
+    background-image: url("imaganes/camisarota.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.info-producto {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 13px;
+    font-size: 14px;
+}
+
+.info-producto h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.info-producto p {
+    color: #777871;
+}
+
+.info-producto strong {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.editorial {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    min-height: 560px;
+    margin-top: 80px;
+    background: var(--olive);
+    color: white;
+}
+
+.imagen-editorial {
+    min-height: 420px;
+    background: linear-gradient(90deg, transparent 50%, rgba(44, 50, 39, .2)), url("imaganes/imagenabajo.png") center / cover;
+}
+
+.contenido-editorial {
+    max-width: 480px;
+    align-self: center;
+    padding: 70px 8vw 70px 65px;
+}
+
+.contenido-editorial .etiqueta {
+    color: #d4a18c;
+}
+
+.contenido-editorial h2 {
+    font-size: clamp(34px, 4vw, 58px);
+    line-height: .98;
+    font-weight: 500;
+    margin: 18px 0 22px;
+}
+
+.contenido-editorial > p:not(.etiqueta) {
+    color: #e3e5dd;
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 30px;
+}
+
+.boton-oscuro {
+    display: inline-flex;
+    gap: 18px;
+    align-items: center;
+    background: white;
+    color: var(--ink);
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.boton-oscuro span {
+    font-size: 19px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 30px;
+    padding: 55px 32px;
+    background: var(--ink);
+    color: white;
+}
+
+.marca-pie h2 {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.marca-pie p,
+.derechos-autor {
+    color: #a8aba3;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.enlaces-pie {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.enlaces-pie a {
+    padding: 0;
+    font-size: 14px;
+}
+
+.derechos-autor {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    header {
+        height: 62px;
+    }
+
+    header nav a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .iconos {
+        padding-right: 10px;
+        font-size: 16px;
+    }
+
+    .portada {
+        height: 590px;
+    }
+
+    .contenido-portada {
+        margin-top: 130px;
+        padding: 0 20px;
+    }
+
+    .contenido-portada h2 {
+        font-size: 38px;
+    }
+
+    .categorias,
+    .novedades {
+        padding: 68px 20px;
+    }
+
+    .enlaces-categoria,
+    .rejilla-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enlace-categoria {
+        min-height: 190px;
+        font-size: 21px;
+        padding: 16px;
+    }
+
+    .encabezado-fila {
+        align-items: start;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .editorial {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+
+    .imagen-editorial {
+        min-height: 300px;
+    }
+
+    .contenido-editorial {
+        padding: 55px 24px 65px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        padding: 42px 20px;
+    }
+}
+
+#novedades {
+    border-top: 1px solid var(--line);
+}
